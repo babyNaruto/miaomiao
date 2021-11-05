@@ -19,23 +19,44 @@
 
     <view class="index-list">
         <view class="index-list-item">
-            <image src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
-            <text class="index-list-text">
+            <image mode="aspectFill" src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <view class="index-list-text">
                 <text>小喵喵</text>
                 <text>
                     <text class="iconfont icon-dianzan"></text>
                     <text>100</text>
                 </text>
-            </text>
+            </view>
         </view>
         <view class="index-list-item">
-            <image src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <image mode="aspectFill" src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <view class="index-list-text">
+                <text>小喵喵</text>
+                <text>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>100</text>
+                </text>
+            </view>
         </view>
         <view class="index-list-item">
-            <image src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <image mode="aspectFill" src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <view class="index-list-text">
+                <text>小喵喵</text>
+                <text>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>100</text>
+                </text>
+            </view>
         </view>
         <view class="index-list-item">
-            <image src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <image mode="aspectFill" src="https://p3.pstatp.com/large/39f600038907bf3b9c96"/>
+            <view class="index-list-text">
+                <text>小喵喵</text>
+                <text>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>100</text>
+                </text>
+            </view>
         </view>
     </view>
 

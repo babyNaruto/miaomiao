@@ -1,2 +1,12 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user">
+
+    <view class="user-info">
+        <image src="{{userPhoto}}"></image>
+        <text wx:if="{{logged}}"> 欢迎您：{{nickName}}</text>
+        <button wx:else open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" disabled="{{disabled}}">微信登录</button>
+
+    </view>
+
+
+</view>

@@ -15,5 +15,7 @@ App({
     }
 
     this.globalData = {};
+    //全局数据
+    this.userInfo = {};
   }
 });

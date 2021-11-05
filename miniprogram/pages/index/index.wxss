@@ -31,10 +31,12 @@
 .index-list{
     display: flex;
     flex-wrap: wrap;
+    color:dodgerblue
 }
 
 .index-list-item{
     width: 50%;
+    margin: 10rpx 0;
 }
 
 .index-list-item image{
@@ -42,4 +44,11 @@
     height: 250rpx;
     margin: 0 auto;
     display: block;
+}
+
+.index-list-text{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
 }
