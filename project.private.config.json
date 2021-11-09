@@ -65,6 +65,12 @@
                     "pathName": "pages/user/user",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/editUserInfo/editUserInfo",
+                    "pathName": "pages/editUserInfo/editUserInfo",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

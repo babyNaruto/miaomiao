@@ -25,3 +25,17 @@
     margin: 0;
     margin-left: 10rpx;
 }
+
+user-list{
+    margin-top: 40rpx;
+
+}
+
+.user-list-item{
+    height: 50rpx;
+    border-bottom: 1px #b7b7b7 dashed;
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

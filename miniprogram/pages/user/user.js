@@ -64,6 +64,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        //设置中修改的信息同步到用户信息页面
+        this.setData({
+            userPhoto: app.userInfo.userPhoto,
+            nickName: app.userInfo.nickName
+        })
 
     },
 
@@ -115,7 +120,8 @@ Page({
                     phoneNumber: '',
                     weixinNumber: '',
                     links: 0,
-                    time: new Date()
+                    time: new Date(),
+                    isLocation: true
                 }
 
 
