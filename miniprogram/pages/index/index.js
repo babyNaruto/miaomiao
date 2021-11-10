@@ -14,7 +14,8 @@ Page({
       
             'https://p3.pstatp.com/large/31fa0003ed7228adf421'
         ],
-        listData: []
+        listData: [],
+        current:  'links'
     },
 
     /**
@@ -28,16 +29,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        db.collection('users').field({
-            userPhoto: true,
-            nickName: true,
-            links: true
-        }).get().then((res) =>{
-            // console.log(res.data)
-            this.setData({
-              listData: res.data  
-            })
-        })
+        this.getListData();
     },
 
     /**
@@ -116,6 +108,33 @@ Page({
         }
 
        });
+    },
+    handleCurrent(ev){
+        let current = ev.target.dataset.current;
+        if(current == this.data.current){
+            return false;
+        }
+        this.setData({
+            current
+        }, ()=>{
+            this.getListData()
+        });
+        
+    },
+    getListData(){
+        db.collection('users').field({
+            userPhoto: true,
+            nickName: true,
+            links: true
+        })
+        .orderBy(this.data.current, "desc")
+        .get()
+        .then((res) =>{
+            // console.log(res.data)
+            this.setData({
+              listData: res.data  
+            })
+        });
     }
 
 })

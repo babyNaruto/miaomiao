@@ -14,8 +14,8 @@
 
     <!-- 2.分栏 -->
     <view class="index-tab">
-        <view class="active">推荐</view>
-        <view>最新</view>
+        <view class="{{ current == 'links' ? 'active' : ''}}" data-current="links" bindtap="handleCurrent">推荐</view>
+        <view class="{{ current == 'times' ? 'active' : ''}}" data-current="times" bindtap="handleCurrent">最新</view>
     </view>
 
     <view class="index-list">
