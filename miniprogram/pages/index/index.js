@@ -135,6 +135,15 @@ Page({
               listData: res.data  
             })
         });
+    },
+
+    //详情页的跳转
+
+    handleDetail(ev){
+        let id = ev.target.dataset.id;
+        wx.navigateTo({
+          url: '/pages/detail/detail?userId=' + id
+        })
     }
 
 })

@@ -1,11 +1,14 @@
 // pages/message/message.js
+const app = getApp();
+const db = wx.cloud.database();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        logged: false,
+        userMessage: []
     },
 
     /**
@@ -16,17 +19,39 @@ Page({
     },
 
     /**
-     * 生命周期函数--监听页面初次渲染完成
+     * 生命周期函数--监听页面***初次！***渲染完成
      */
     onReady: function () {
-
+        // console.log(1)
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        // console.log(2)
+        if (app.userInfo._id) {
+            this.setData({
+                logged: true,
+                userMessage: app.userMessage
+            })
+        } 
+        else {
+            wx.showToast({
+                title: '请先登录',
+                duration: 2000,
+                icon: 'none',
+                success: ()=> {
+                    setTimeout(()=> {
+                      wx.switchTab({
+                          url: '/pages/user/user',
+                        })
+                    }, 2000);
+                  //nav只能打开非Tab页面
+                }
+            
+            })
+        }
     },
 
     /**
@@ -62,5 +87,16 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    onMyEvent(ev){
+        this.setData({
+            userMessage: []
+        },()=>{
+            this.setData({
+                userMessage: ev.detail
+            })
+        })
+        // console.log(ev.detail);
+    
     }
 })

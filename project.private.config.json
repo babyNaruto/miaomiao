@@ -71,6 +71,18 @@
                     "pathName": "pages/editUserInfo/editUserInfo",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/detail/detail",
+                    "pathName": "pages/detail/detail",
+                    "query": "userId=18ed09686184e34603885e5f1c1db5ee",
+                    "scene": null
+                },
+                {
+                    "name": "pages/message/message",
+                    "pathName": "pages/message/message",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }
