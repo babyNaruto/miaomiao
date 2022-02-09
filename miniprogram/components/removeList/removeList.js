@@ -30,31 +30,7 @@ Component({
               success: (res)=> {
                 if (res.confirm) {
                 //   console.log('用户点击确定')
-                db.collection('message').where({
-                    userId: app.userInfo._id
-                }).get().then( (res)=>{
-                    // console.log(res)
-                    let list = res.data[0].list;
-                    console.log(list)
-                    list = list.filter( (val, i)=>{
-                        return val != this.data.messageId
-                    });
-                    console.log(list);
-                    wx.cloud.callFunction({
-                        name: 'update',
-                        data: {
-                            collection: 'message',
-                            where: {
-                                userId: app.userInfo._id
-                            },
-                            data : {
-                                list
-                            }
-                        }
-                    }).then( (res)=>{
-                        this.triggerEvent('myevent', list)
-                    })
-                })
+                this.removeMessage()
                 } else if (res.cancel) {
                   console.log('用户点击取消')
                 }
@@ -70,16 +46,58 @@ Component({
                   if (res.confirm) {
                   //   console.log('用户点击确定')
 
-                    db.collection('users').update({
+                    db.collection('users').doc(app.userInfo._id).update({
                         data: {
                             friendList: _.unshift(this.data.messageId)
                         }
-                    }).then( (res) =>{})
+                    }).then( (res) =>{});
+                    this.removeMessage();
+
+                    //双向添加好友关系
+                    wx.cloud.callFunction({
+                        name: 'update',
+                        data: {
+                            collection: 'users',
+                            doc: this.data.messageId,
+                            data:`{
+                                friendList: _.unshift('${app.userInfo._id}')
+                            }`
+                        }
+                    }).then((res)=>{});
+                    this.removeMessage();
                   } else if (res.cancel) {
                     // console.log('用户点击取消')
                   }
                 }
               })
+          },
+          //删除消息
+          removeMessage(){
+            db.collection('message').where({
+                userId: app.userInfo._id
+            }).get().then( (res)=>{
+                // console.log(res)
+                let list = res.data[0].list;
+                console.log(list)
+                list = list.filter( (val, i)=>{
+                    return val != this.data.messageId
+                });
+                console.log(list);
+                wx.cloud.callFunction({
+                    name: 'update',
+                    data: {
+                        collection: 'message',
+                        where: {
+                            userId: app.userInfo._id
+                        },
+                        data : {
+                            list
+                        }
+                    }
+                }).then( (res)=>{
+                    this.triggerEvent('myevent', list)
+                })
+            })
           }
         
         

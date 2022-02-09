@@ -14,7 +14,8 @@ Page({
         userPhoto: "/images/user/user_unlogin.png",
         nickName: "naruto",
         logged: false,
-        disabled: true
+        disabled: true,
+        id: ''
 
     },
 
@@ -47,7 +48,8 @@ Page({
                 this.setData({
                     userPhoto: app.userInfo.userPhoto,
                     nickName: app.userInfo.nickName,
-                    logged: true
+                    logged: true,
+                    id: app.userInfo._id
                 });
                 this.getMessage();
                 } else{
@@ -68,7 +70,8 @@ Page({
         //设置中修改的信息同步到用户信息页面
         this.setData({
             userPhoto: app.userInfo.userPhoto,
-            nickName: app.userInfo.nickName
+            nickName: app.userInfo.nickName,
+            id: app.userInfo._id
         })
 
     },
@@ -137,7 +140,8 @@ Page({
                     this.setData({
                         userPhoto: app.userInfo.userPhoto,
                         nickName: app.userInfo.nickName,
-                        logged: true
+                        logged: true,
+                        id: app.userInfo._id
                     })
                 })
             });
