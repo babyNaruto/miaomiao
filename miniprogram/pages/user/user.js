@@ -4,6 +4,7 @@ const app = getApp()
 //初始化数据库
 
 const db = wx.cloud.database()
+const _ = db.command
 
 Page({
 
@@ -31,6 +32,7 @@ Page({
      */
     //云函数自动登录实现
     onReady: function () {
+        this.getLocation();
         wx.cloud.callFunction({
             name: 'login',
             data: {}
@@ -127,7 +129,10 @@ Page({
                     links: 0,
                     time: new Date(),
                     isLocation: true,
-                    friendList: []
+                    friendList: [],
+                    longitude: this.longitude,
+                    latitude: this.latitude,
+                    location: db.Geo.Point(this.longitude, this.latitude)
                 }
 
 
@@ -177,5 +182,14 @@ Page({
             }
              
         })
+    },
+    getLocation(){
+        wx.getLocation({
+            type: 'gcj02',
+            success : (res)=>{
+              this.latitude = res.latitude;
+              this.longitude = res.longitude;
+            }
+           })
     }
 })

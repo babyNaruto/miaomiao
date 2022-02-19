@@ -1,2 +1,14 @@
 <!--pages/near/near.wxml-->
-<text>pages/near/near.wxml</text>
+<view class="map">
+  <map
+      id="myMap"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      bindmarkertap="markertap"
+      show-location
+      show-compass
+      show-scale
+    >
+    </map>
+    </view>
