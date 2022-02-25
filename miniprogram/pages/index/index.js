@@ -8,11 +8,11 @@ Page({
      */
     data: {
         imgUrls: [
-            'https://p3.pstatp.com/large/43700001e49d85d3ab52',
+            'https://img2.baidu.com/it/u=331362266,3772279129&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500',
 
-            'https://p3.pstatp.com/large/39f600038907bf3b9c96',
+            'https://img1.baidu.com/it/u=722430420,1974228945&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
       
-            'https://p3.pstatp.com/large/31fa0003ed7228adf421'
+            'https://img2.baidu.com/it/u=2663305352,783996922&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313'
         ],
         listData: [],
         current:  'links'

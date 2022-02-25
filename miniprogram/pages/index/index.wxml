@@ -1,6 +1,7 @@
 <!--pages/index/index.wxml-->
 <wxs src="../../utils/wordSplit.wxs" module="m1"></wxs>
 <wxs src="../../utils/unitFormat.wxs" module="m2"></wxs>
+<search />
 <view class="index">
 
     <!-- 1.轮播图 -->

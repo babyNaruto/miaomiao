@@ -1,4 +1,5 @@
 <!--pages/near/near.wxml-->
+<search />
 <view class="map">
   <map
       id="myMap"
