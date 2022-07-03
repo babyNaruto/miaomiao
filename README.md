@@ -1,3 +1,6 @@
+# 作品效果
+![user](https://github.com/babyNaruto/miaomiao/blob/master/%E5%96%B5%E5%96%B5%E4%BA%A4%E5%8F%8B%E4%B8%AA%E4%BA%BA%E9%A1%B5.png)
+![index](https://github.com/babyNaruto/miaomiao/blob/master/%E5%96%B5%E5%96%B5%E9%A6%96%E9%A1%B5.png)
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
